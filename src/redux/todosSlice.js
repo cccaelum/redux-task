@@ -4,12 +4,12 @@ const initialState = {
     tasks: [] 
   };
 
-export const todosSlice = createSlice({
+const todosSlice = createSlice({
     name: 'todos',
     initialState,
     reducers: {
         addTask: (state, action) => {
-            const newTask = { id: Date.now(), text: action.payload };
+            const newTask = { id: Math.random(), text: action.payload };
             state.tasks.push(newTask);
         },
         removeTask: (state, action) => {
